@@ -1,0 +1,7 @@
+{
+  "name": "mobile-police-car",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}

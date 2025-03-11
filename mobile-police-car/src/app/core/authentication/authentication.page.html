@@ -1,0 +1,24 @@
+<ion-content [fullscreen]="true">
+  <div id="container">
+    <form [formGroup]="formAuth">
+      <ion-input 
+        formControlName="username" 
+        label="Ingresa nombre de usuario" 
+        label-placement="floating" 
+        fill="outline" 
+        placeholder="Enter text">
+      </ion-input>
+      @if(getFormErrors('username')){
+        <div slot="label">Nombre de usuario <ion-text color="danger">es requerido</ion-text></div>
+      }
+      <ion-input formControlName="password" type="password" label="Ingresa contrasenia" label-placement="floating" fill="outline" placeholder="Enter text">
+        <div slot="label">Contrasenia <ion-text color="danger">es requerido</ion-text></div>
+      </ion-input>
+      @if(getFormErrors('password')){
+        <div slot="label">Nombre de usuario <ion-text color="danger">es requerido</ion-text></div>
+      }
+    </form>
+    <ion-button (click)="logIn()" color="primary" expand="full">Iniciar sesion</ion-button>
+  </div>
+  <message-alert-toast [message]="errorMessage"></message-alert-toast>
+  </ion-content>
